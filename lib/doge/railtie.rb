@@ -3,6 +3,7 @@ module Rack
     class DogeRailtie < Rails::Railtie
       initializer "doge_railtie.configure_rails_initialization" do |app|
         app.middleware.insert 0, Rack::Doge::Start
+        app.middleware.insert 0, Rack::Doge::Reporter
         app.middleware.use Rack::Doge::End
       end
     end
