@@ -1,6 +1,6 @@
 module Rack
-  module Doge
-    class End < BaseDoge
+  module Timing
+    class End < Base
       # This middleware should run as late in the stack as possible.
       def call(env)
         env["RACK_IN_END"] = time_ms

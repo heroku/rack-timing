@@ -1,7 +1,7 @@
-require "rack/doge/version"
+require "rack/timing/version"
 
 module Rack
-  module Doge
+  module Timing
     # Your code goes here...
   end
 end

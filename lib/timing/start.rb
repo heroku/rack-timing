@@ -1,6 +1,6 @@
 module Rack
-  module Doge
-    class Start < BaseDoge
+  module Timing
+    class Start < Base
       # This rack should run as early in the stack as possible.
 
       def call(env)

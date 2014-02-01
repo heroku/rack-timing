@@ -1,13 +1,13 @@
-require 'doge/notify'
+require 'timing/notify'
 module Rack
-  module Doge
-    class BaseDoge
+  module Timing
+    class Base
       include Notify
 
       def initialize(app, logger = nil)
         @logger  = logger
         @app     = app
-        @instrument_name = "rack.doge"
+        @instrument_name = "rack.timing"
         @logger  = ::Logger.new($stdout) if @logger.nil?
         # @logger.formatter = L2MetFormatter.new
       end

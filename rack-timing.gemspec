@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'doge/version'
+require 'timing/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rack-doge"
-  spec.version       = Rack::Doge::VERSION
+  spec.name          = "rack-timing"
+  spec.version       = Rack::Timing::VERSION
   spec.authors       = ["Chad Bailey"]
   spec.email         = ["chad@heroku.com"]
   spec.description   = %q{Analyze timing and process info from your Rack stack.}

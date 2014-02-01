@@ -1,4 +1,4 @@
-# rack-doge
+# rack-timing
 
 Add this gem to a Rails app to get a log line like this for each request:
 
@@ -18,7 +18,7 @@ That includes:
 
 Add this line to your application's Gemfile:
 
-    gem 'rack-doge'
+    gem 'rack-timing'
 
 And then execute:
 

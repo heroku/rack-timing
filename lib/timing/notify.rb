@@ -1,5 +1,5 @@
 module Rack
-  module Doge
+  module Timing
     module Notify
       def should_notify?
         if defined?(ActiveSupport::Notifications)

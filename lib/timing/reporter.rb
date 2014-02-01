@@ -1,6 +1,6 @@
 module Rack
-  module Doge
-    class Reporter < BaseDoge
+  module Timing
+    class Reporter < Base
       def call(env)
         @metrics = {}
 
