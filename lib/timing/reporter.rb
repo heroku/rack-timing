@@ -7,9 +7,9 @@ module Rack
         status, headers, response = @app.call(env)
 
         measure_pre_request_time(env)
-        measure(:rack_in, :rack_in_start, :rack_in_end, env)
-        measure(:app, :rack_in_end, :rack_out_start, env)
-        measure(:rack_out, :rack_out_start, :rack_out_end, env)
+        measure("measure#rack_in", :rack_in_start, :rack_in_end, env)
+        measure("measure#app", :rack_in_end, :rack_out_start, env)
+        measure("measure#rack_out", :rack_out_start, :rack_out_end, env)
 
         @metrics = {thread_id: Thread.current.object_id, process_id: Process.pid, request_id: (env["action_dispatch.request_id"] || "")}.merge(@metrics)
         notify(@metrics) if should_notify?
@@ -30,9 +30,9 @@ module Rack
 
       def measure_pre_request_time(env)
         if (request_start = (env["HTTP_X_REQUEST_START"] || 0).to_i) > 0
-          @metrics[:pre_request] = (env["RACK_IN_START"] - request_start).to_s + "ms"
+          @metrics["measure#pre_request"] = (env["RACK_IN_START"] - request_start).to_s + "ms"
         else
-          @metrics[:pre_request] = "0ms"
+          @metrics["measure#pre_request"] = "0ms"
         end
       end
 
