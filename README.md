@@ -2,7 +2,7 @@
 
 Ever wondered if some of your app's latency is coming from myserious middleware? Want to be able to tie requests to specific workers and threads while you're at it? Add this gem to a Rails app to get a log line like this for each request:
 
-    at=info thread_id=70351652783840 process_id=55394 request_id=013f9cc29c1e4c483435dbc15ab260f4 pre_request=0ms rack_in=202ms app=505ms rack_out=301ms
+    at=info thread_id=70351652783840 process_id=55394 request_id=013f9cc29c1e4c483435dbc15ab260f4 measure#pre_request=0ms measure#rack_in=202ms measure#app=505ms measure#rack_out=301ms
 
 That includes:
 
