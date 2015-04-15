@@ -11,7 +11,13 @@ module Rack
         measure("measure#app", :rack_in_end, :rack_out_start, env)
         measure("measure#rack_out", :rack_out_start, :rack_out_end, env)
 
-        @metrics = {thread_id: Thread.current.object_id, process_id: Process.pid, request_id: (env["action_dispatch.request_id"] || "")}.merge(@metrics)
+        @metrics = {
+          thread_id: Thread.current.object_id,
+          process_id: Process.pid,
+          request_id: (env["action_dispatch.request_id"] || ""),
+          path: env['REQUEST_PATH']
+        }.merge(@metrics)
+
         notify(@metrics) if should_notify?
         @logger.info "at=info " + @metrics.map { |k, v| "#{k}=#{v}"}.join(" ")
 
